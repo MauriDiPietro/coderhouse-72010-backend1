@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { v4 as uuidv4 } from "uuid";
+import { createHash } from "../utils/user-utils.js";
 
 class UserManager {
   constructor(path) {
@@ -24,11 +25,27 @@ class UserManager {
         ...obj,
       };
       const users = await this.getAllUsers(); //[] | [{}, {}]
-      const userExists = users.find((u) => u.id === user.id);
+      const userExists = users.find((u) => u.email === user.email);
       if (userExists) throw new Error("User already exists");
+      createHash(user);
       users.push(user);
       await fs.promises.writeFile(this.path, JSON.stringify(users));
       return user;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async updateUser(obj, id) {
+    try {
+      const users = await this.getAllUsers();
+      let userExist = await this.getUserByid(id);
+      userExist = { ...userExist, ...obj };
+      createHash(userExist);
+      const newArray = users.filter((u) => u.id !== id);
+      newArray.push(userExist);
+      await fs.promises.writeFile(this.path, JSON.stringify(newArray));
+      return userExist;
     } catch (error) {
       throw error;
     }
@@ -48,15 +65,11 @@ class UserManager {
   async deleteUser(id) {
     try {
       const users = await this.getAllUsers();
-      if (users.length) {
-        const userExists = await this.getUserByid(id);
-        if (userExists) {
-          const newArray = users.filter((u) => u.id !== id);
-          await fs.promises.writeFile(this.path, JSON.stringify(newArray));
-          return newArray;
-        }
-        return null;
-      }
+      if (!users.length) throw new Error("Users is empty");
+      const userExists = await this.getUserByid(id);
+      const newArray = users.filter((u) => u.id !== id);
+      await fs.promises.writeFile(this.path, JSON.stringify(newArray));
+      return userExists;
     } catch (error) {
       throw new Error(error);
     }
