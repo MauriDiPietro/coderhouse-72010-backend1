@@ -1,0 +1,20 @@
+[
+  {
+    "id": "38fbeabf-0b50-4bcd-bc21-b9ed58c11842",
+    "firstname": "Juan",
+    "lastiname": "Perez",
+    "email": "jperez@mail.com",
+    "password": "f10a22dc00689fa852999767967b22e97742acffa303510269a9d16a95bebb06",
+    "image": "D:\\CODERHOUSE\\BACKEND\\coderhouse-72010-backend1\\08 - ROUTER Y MULTER\\01-router\\src\\public\\images\\imagen.jpg",
+    "secretKey": "�oƼq\u001dv�e!�)��I��J\b��\u00033��6w����.\u0014�'��y�r�*B���Aai�h\u0011��K���\u0005_\u0014S\u0003K\u001a]��r\u0006�9*�B4\u0001���$F��\u001e�z��\u0017�t��D0�G߉X�y��\"���{����{`���(��7J%�7�"
+  },
+  {
+    "id": "054602bb-9b73-4a14-bcaa-5f81bf4aceaf",
+    "firstname": "Martin",
+    "lastiname": "Gomez",
+    "email": "mgomez@mail.com",
+    "password": "23d521e33e836a1b4bcb4b08133c49ba97d05f88d197fb8f8b25eb48e57e52de",
+    "image": "D:\\CODERHOUSE\\BACKEND\\coderhouse-72010-backend1\\08 - ROUTER Y MULTER\\01-router\\src\\public\\images\\LOGO-CODER.png",
+    "secretKey": "�l���\u0016T\\�%-�r��i\u000b\u0002�\u0001\t7���6iZ��� �\u000b���p۬���pلV�H\te�V�?��s�\u0018��|n�\u001272Q񯞔�m�]X\n~� �aU�����\u0004�'٢A(>��\u0004����\tB���\f�`ŗ��If�6J�!u\u0014"
+  }
+]

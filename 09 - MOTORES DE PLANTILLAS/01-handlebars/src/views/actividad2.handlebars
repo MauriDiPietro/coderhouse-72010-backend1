@@ -1,0 +1,14 @@
+{{#if users.length}}
+    <h2>List of users:</h2>
+    {{#each users}}
+        <ul>
+            <li>firstname: {{firstname}}</li>
+            <li>lastname: {{lastname}}</li>
+            <li>age: {{age}}</li>
+            <li>email: {{email}}</li>
+        </ul>
+    {{/each}}
+{{else}}
+    <h2>Users not found</h2>
+{{/if}}
+<script src="index.js"></script>

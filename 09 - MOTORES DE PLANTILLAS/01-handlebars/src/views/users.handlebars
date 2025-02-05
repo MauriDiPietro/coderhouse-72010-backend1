@@ -1,0 +1,10 @@
+{{#if usersfs.length}}
+    <h2>List of users:</h2>
+    {{#each usersfs}}
+        <ul>
+            <li>email: {{email}}</li>
+        </ul>
+    {{/each}}
+{{else}}
+    <h2>Users not found</h2>
+{{/if}}

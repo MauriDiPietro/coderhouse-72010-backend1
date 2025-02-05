@@ -3,7 +3,7 @@ import { __dirname } from '../dirname-utils.js';
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    console.log(req)
+    // console.log(file)
     cb(null, `${__dirname}/public/images`);
   },
   filename: function (req, file, cb) {
